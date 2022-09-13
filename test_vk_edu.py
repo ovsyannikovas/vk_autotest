@@ -6,11 +6,11 @@ class TestStr:
         string = "vk"
         assert string.title() == "Vk"
 
-    @pytest.mark.parametrize("test_input_s, test_expected",
-                             [("Hello" + "World", "HelloWorld"), ("VK" * 5, "VKVKVKVKVK"),
-                              ("test".upper(), "TEST")])
-    def test_str_2(self, test_input_s, test_expected):
-        assert test_input_s == test_expected
+    @pytest.mark.parametrize("test_input_s1, test_input_s2, test_expected",
+                             [("Hello", "World", "HelloWorld"), ("VK", " ", "VK "),
+                              ("Test", "", "Test")])
+    def test_str_2(self, test_input_s1, test_input_s2, test_expected):
+        assert test_input_s1 + test_input_s2 == test_expected
 
     def test_str_3(self):
         test_string = "string"
